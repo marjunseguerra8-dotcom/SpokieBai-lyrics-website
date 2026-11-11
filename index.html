@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpokieBai</title>
+  <link rel="icon" type="image/png" href="spotify.png" class="logo">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#">♫ <span>Spokiebai</span></a>
+
+    <nav aria-label="Main navigation">
+      <a class="nav-link active" href="#home">⌂ <span>Home</span></a>
+      <a class="nav-link" href="#search">⌕ <span>Search</span></a>
+      <a class="nav-link" href="#library">▤ <span>Your Library</span></a>
+    </nav>
+
+    <div class="sidebar-playlist">
+      <p>YOUR PLAYLISTS</p>
+      <a href="#library">Favorite Tracks</a>
+      <a href="#library">Campus Mix</a>
+    </div>
+
+    <div class="sidebar-note">A playlist for your day.</div>
+  </aside>
+
+  <main class="main" id="home">
+    <header class="topbar">
+      <div class="topbar-buttons" aria-hidden="true">
+        <button type="button">‹</button>
+        <button type="button">›</button>
+      </div>
+
+      <label class="search-box" id="search">
+        <span>⌕</span>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search songs or artists"
+        />
+      </label>
+
+      <div class="profile"> <img src="profile.jpeg" alt="propayl"></div>
+    </header>
+
+    <section class="hero">
+      <p>YOUR MUSIC, YOUR MOMENT</p>
+      <h1>"Tune in, <br>tune out."</h1>
+      <span>Feel every beat</span>
+    </section>
+
+    <section class="content-section" id="library">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">"Where words fail, music speaks." </p>
+          <h2>Featured tracks</h2>
+        </div>
+        <span class="track-count" id="trackCount"></span>
+      </div>
+
+      <div class="track-grid" id="trackGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>
+        No matching tracks found.
+      </p>
+    </section>
+  </main>
+
+  <section
+    class="lyrics-panel"
+    id="lyricsPanel"
+    hidden
+    aria-live="polite"
+  >
+    <div class="lyrics-heading">
+      <div>
+        <p class="eyebrow">SING ALONG</p>
+        <h2 id="lyricsTitle">Lyrics</h2>
+      </div>
+      <button id="closeLyrics" type="button" aria-label="Close lyrics">×</button>
+    </div>
+    <div class="lyrics-lines" id="lyricsLines"></div>
+  </section>
+
+  <footer class="player">
+    <div class="now-playing">
+      <img
+        class="cover small-cover"
+        id="playerCover"
+        src="paihi.jpg"
+        alt="Now playing cover"
+      />
+      <div class="now-playing-text">
+        <strong id="playerTitle">Life hits diff with headsphone on</strong>
+        <span id="playerArtist">Spokiebai</span>
+      </div>
+    </div>
+
+    <div class="player-center">
+      <div class="controls">
+        <button
+          class="utility-button"
+          id="shuffleButton"
+          type="button"
+          aria-label="Toggle shuffle"
+        >⤨</button>
+
+        <button
+          id="previousButton"
+          type="button"
+          aria-label="Previous track"
+        >|◀</button>
+
+        <button
+          class="play-button"
+          id="playButton"
+          type="button"
+          aria-label="Play"
+        >▶</button>
+
+        <button
+          id="nextButton"
+          type="button"
+          aria-label="Next track"
+        >▶|</button>
+
+        <button
+          class="utility-button"
+          id="loopButton"
+          type="button"
+          aria-label="Toggle repeat"
+        >↻</button>
+      </div>
+
+      <div class="timeline">
+        <span id="currentTime">0:00</span>
+        <input
+          id="progress"
+          type="range"
+          min="0"
+          max="100"
+          value="0"
+          aria-label="Track progress"
+        />
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+
+    <div class="volume-control">
+      <span>♪</span>
+      <input
+        id="volume"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.8"
+        aria-label="Volume"
+      />
+    </div>
+
+<label class="speed-control">
+  Speed
+  <select id="playbackSpeed" aria-label="Playback speed">
+    <option value="0.75">0.75×</option>
+    <option value="1" selected>1×</option>
+    <option value="1.25">1.25×</option>
+    <option value="1.5">1.5×</option>
+    <option value="2">2×</option>
+  </select>
+</label>
+
+    <audio id="audio"></audio>
+  </footer>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="#home">⌂<span>Home</span></a>
+    <a href="#search">⌕<span>Search</span></a>
+    <a href="#library">▤<span>Library</span></a>
+  </nav>
+</body>
+</html>
